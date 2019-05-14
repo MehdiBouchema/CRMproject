@@ -102,7 +102,7 @@ namespace CRMproject
             XmlNodeList messageType = doc.GetElementsByTagName("messageType");
             XmlNodeList sender = doc.GetElementsByTagName("sender");
             XmlNodeList banned = doc.GetElementsByTagName("banned");
-
+            //version+timestamp+isActive
 
             if (sessionName[0].InnerText == "" || UUIDofParentEvent[0].InnerText == "" || sessionUUID[0].InnerText == "")
             {

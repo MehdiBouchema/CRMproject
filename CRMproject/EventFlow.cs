@@ -42,7 +42,6 @@ namespace CRMproject
 
 
         }
-
         private void UpdateRecordEvent(string messageType, string idEvent, string nameEvent, string uuid, Int32 timestamp, Int32 version, bool isActive)
         {
             EEvent__c[] updates = new EEvent__c[1];
@@ -81,7 +80,7 @@ namespace CRMproject
         public void HandleMessageEvent(XmlDocument doc)
         {
             XmlNodeList eventUUID = doc.GetElementsByTagName("UUID");
-            XmlNodeList eventName = doc.GetElementsByTagName("name");
+            XmlNodeList eventName = doc.GetElementsByTagName("eventName");
             XmlNodeList timestamp = doc.GetElementsByTagName("timestamp");
             XmlNodeList version = doc.GetElementsByTagName("version");
             XmlNodeList isactive = doc.GetElementsByTagName("isActive");

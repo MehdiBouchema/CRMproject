@@ -58,7 +58,9 @@ namespace CRMproject
                             doc.LoadXml(message);
                             XmlNodeList xmlList = doc.GetElementsByTagName("messageType");
                             string messageType = xmlList[0].InnerText;
-                       
+                            XmlNodeList sender = doc.GetElementsByTagName("sender");
+
+
                             switch (messageType)
                             {
                                 case "Visitor":
@@ -78,7 +80,7 @@ namespace CRMproject
                                     session.HandleMessageSession(doc);
                                     break;
                                 default:
-                                    Console.WriteLine("Invalid MessageType Received from the Sender.");
+                                    Console.WriteLine("Invalid MessageType Received from module "+sender[0].InnerText);
                                     break;
                             }
                         };
